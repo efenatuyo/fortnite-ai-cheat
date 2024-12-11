@@ -1,0 +1,9 @@
+{
+    "xy_sens": 60.0,
+    "targeting_sens": 80.0,
+    "fov_radius": 175,
+    "mouse_delay": 0,
+    "smoothing_factor": 0.99,
+    "aim_height": 2.3,
+    "confidence": 0.6
+}
