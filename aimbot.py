@@ -166,14 +166,14 @@ class Aimbot:
         response = self.is_targeting()
         if response:
             scale = self.scale
-            for rel_x, rel_y in self.interpolate_coordinates(self, (x, y), scale):
+            for rel_x, rel_y in Aimbot.interpolate_coordinates(self, (x, y), scale):
                 self.ii_.mi = MouseInput(rel_x, rel_y, 0, 0x0001, 0, ctypes.pointer(self.extra))
                 input_obj = Input(ctypes.c_ulong(0), self.ii_)
                 ctypes.windll.user32.SendInput(1, ctypes.byref(input_obj), ctypes.sizeof(input_obj))
                 self.sleep(self.mouse_delay)
                 
     @staticmethod
-    def interpolate_coordinates(self, target_coords, scale):
+    def interpolate_coordinates(target_coords, scale):
         diff_x = (target_coords[0] - self.screen_x) * scale
         diff_y = (target_coords[1] - self.screen_y) * scale
         length = int(math.hypot(diff_x, diff_y))
