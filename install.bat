@@ -1,13 +1,6 @@
 @echo off
 SETLOCAL
 
-echo Checking if Python 3.11 is installed...
-python --version 2>nul | findstr /c:"Python 3.11" >nul
-IF %ERRORLEVEL% NEQ 0 (
-    echo Python 3.11 not found! Please install Python 3.11 from https://www.python.org/downloads/release/python-311/.
-    exit /b 1
-)
-
 echo Updating pip...
 python -m pip install --upgrade pip
 
